@@ -1,0 +1,31 @@
+@mixin center-block {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+$lte7: true ! default;
+
+@mixin inline-block {
+    display: inline-block;
+    @if $lte7 {
+        *display: inline;*zoom: 1;
+    }
+}
+
+@mixin float($float: left){
+    float: $float;
+    @if $lte7{
+        display: inline;
+    }
+}
+
+@mixin disabled($bgColor: #f6f6f6, $textColor: #adadad){
+    background-color: $bgColor !important;
+    color: $textColor !important;
+    cursor: not-allowed !important;
+}
+@mixin box-shadow($shadow...){
+    -webkit-box-shadow:$shadow;
+    -moz-box-shadow:$shadow;
+    box-shadow: $shadow;
+}
